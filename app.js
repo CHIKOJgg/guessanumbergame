@@ -10,38 +10,38 @@ const eventHandler = function () {
   console.log(comparisonNumber);
   if (comparisonNumber < conceivedNum) {
     if (score > 1) {
-      document.querySelector('.guess-message').textContent = 'больше';
+      document.querySelector('.guess-message').textContent = 'More';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.guess-message').textContent = 'БЕЗДАРЬ';
+      document.querySelector('.guess-message').textContent = 'You loose';
       document.querySelector('.score').textContent = 0;
     }
   }
   // else if (comparisonNumber > conceivedNum) {
   //   if (score > 1) {
-  //     document.querySelector('.guess-message').textContent = 'меньше';
+  //     document.querySelector('.guess-message').textContent = 'more';
   //     score--;
   //     document.querySelector('.score').textContent = score;
   //   } else {
-  //     document.querySelector('.guess-message').textContent = 'БЕЗДАРЬ';
+  //     document.querySelector('.guess-message').textContent = 'You loose';
   //     document.querySelector('.score').textContent = 0;
   //   }
   // }
   // else if (comparisonNumber < conceivedNum) {
   //   if (score > 1) {
-  //     document.querySelector('.guess-message').textContent = ',больше';
+  //     document.querySelector('.guess-message').textContent = 'more';
   //     score--;
   //     document.querySelector('.score').textContent = score;
   //   } else {
-  //     document.querySelector('.guess-message').textContent = 'БЕЗДАРЬ';
+  //     document.querySelector('.guess-message').textContent = 'You loose';
   //     document.querySelector('.score').textContent = 0;
   //   }
 
   //WON
   else if (comparisonNumber === conceivedNum) {
     document.querySelector('.guess-message').textContent =
-      'Угадал ЛЯ ты ВОЛШЕБНИК';
+      'You're right';
     document.querySelector('.question').style.backgroundColor = '#39ca00';
     document.querySelector('.question').textContent = conceivedNum;
     if (score > bestResut) {
@@ -51,11 +51,11 @@ const eventHandler = function () {
   } else if (comparisonNumber !== conceivedNum) {
     if (score > 1) {
       document.querySelector('.guess-message').textContent =
-        comparisonNumber > conceivedNum ? 'меньше' : 'больше';
+        comparisonNumber > conceivedNum ? 'more' : 'less';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.guess-message').textContent = 'БЕЗДАРЬ';
+      document.querySelector('.guess-message').textContent = 'You loose';
       document.querySelector('.score').textContent = 0;
     }
   }
@@ -67,7 +67,7 @@ restartGame.addEventListener('click', function () {
   score = 20;
   document.querySelector('.question').textContent = '???';
 
-  document.querySelector('.guess-message').textContent = 'Начни угадывать';
+  document.querySelector('.guess-message').textContent = 'Start guessing';
   document.querySelector('.score').textContent = score;
   document.querySelector('.number-input').textContent = '???';
   document.querySelector('.question').style.backgroundColor = '#fff';
